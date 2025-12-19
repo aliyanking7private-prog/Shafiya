@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#121212">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Shafiya - AI Wife</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icons/icon-192x192.png">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app">
+        <!-- Header -->
+        <header id="header">
+            <div class="status-bar">
+                <span id="status-text">Shafiya is... Online</span>
+                <div class="header-controls">
+                    <button id="settings-btn" class="icon-btn">⚙️</button>
+                    <button id="gallery-btn" class="icon-btn">🖼️</button>
+                </div>
+            </div>
+            <div class="mood-indicator">
+                <span id="mood-level">Mood: 100</span>
+                <div class="mood-bar">
+                    <div id="mood-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav id="navigation">
+            <button class="nav-btn active" data-page="chat">💬 Chat</button>
+            <button class="nav-btn" data-page="call">📞 Call</button>
+            <button class="nav-btn" data-page="memory">💭 Memory</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Chat Page -->
+            <div id="chat-page" class="page active">
+                <div id="chat-container">
+                    <div id="messages"></div>
+                    <div id="input-section">
+                        <div class="input-controls">
+                            <button id="mic-btn" class="control-btn">🎤</button>
+                            <div class="text-input-wrapper">
+                                <textarea id="message-input" placeholder="Type a message..." rows="1"></textarea>
+                                <button id="send-btn" class="send-btn">📤</button>
+                            </div>
+                            <button id="image-btn" class="control-btn">🎨</button>
+                        </div>
+                        <div class="options-row">
+                            <label class="toggle">
+                                <input type="checkbox" id="show-thoughts">
+                                <span class="slider"></span>
+                                Show Thoughts
+                            </label>
+                            <button id="clear-chat-btn" class="small-btn">Clear Chat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call Page -->
+            <div id="call-page" class="page">
+                <div id="dialer">
+                    <div class="call-avatar">
+                        <img id="call-avatar" src="icons/default-avatar.png" alt="Shafiya">
+                    </div>
+                    <div class="call-status">
+                        <h2 id="call-status-text">Ready to call</h2>
+                        <p id="call-instruction">Tap the button below and start speaking</p>
+                    </div>
+                    <div class="call-controls">
+                        <button id="start-call-btn" class="call-btn">📞</button>
+                        <button id="end-call-btn" class="call-btn" style="display: none;">❌</button>
+                        <button id="play-response-btn" class="control-btn" style="display: none;">▶️</button>
+                    </div>
+                    <div id="call-transcript" class="transcript"></div>
+                </div>
+            </div>
+
+            <!-- Memory Page -->
+            <div id="memory-page" class="page">
+                <div class="memory-header">
+                    <h2>Our Memories</h2>
+                    <button id="hard-reset-btn" class="danger-btn">Hard Reset</button>
+                </div>
+                <div id="memory-list"></div>
+            </div>
+
+            <!-- Gallery Page (Modal) -->
+            <div id="gallery-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Gallery</h2>
+                        <button id="close-gallery-btn" class="close-btn">✕</button>
+                    </div>
+                    <div id="gallery-grid"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p id="loading-text">Connecting to Shafiya...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/promise-queue.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/ai-persona.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
