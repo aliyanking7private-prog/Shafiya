@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #121212;
+  --secondary: #1e1e1e;
+  --accent: #ff6b9d;
+  --text: #ffffff;
+  --text-secondary: #b0b0b0;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger: #f44336;
+  --mood-1: #f44336;
+  --mood-2: #ff9800;
+  --mood-3: #2196f3;
+  --mood-4: #4caf50;
+  --mood-5: #ff6b9d;
+}
+
+html, body {
+  background: var(--primary);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  contain: layout style paint;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* No blur - use opacity instead */
+.container {
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: none;
+}
+
+/* Text normalization */
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Hardware acceleration */
+.accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth scrolling */
+.scrollable {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* Prevent zoom on double-tap */
+input, button, select {
+  font-size: 16px;
+}
+
+/* Prevent default touch behaviors */
+a {
+  -webkit-touch-callout: none;
+}
